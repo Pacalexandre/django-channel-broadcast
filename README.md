@@ -20,5 +20,10 @@ com toda a integração necessária para rodar em uma maquina com docker instala
 - definindo no va chave de segurança settings
 - crianto pastas e arquivos de templates
 - rota padrao para acesso na url base
+- arquivo html usando bootstrap 5 'http://https://getbootstrap.com/'
 - configurando acesso a API jokes 'http://api.icndb.com/jokes/ramdom'
 
+
+## Fonts na internet 
+ 
+ - https://www.youtube.com/watch?v=AZNp1CfOjtE
