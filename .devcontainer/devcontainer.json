@@ -2,13 +2,9 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.241.1/containers/python-3
 {
 	"name": "django-channel-broadcast",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"context": "..",
-		"args": { 
-			"VARIANT": "3.10-bullseye"
-		}
-	},
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
 
 	// Configure tool-specific properties.
 	"customizations": {
