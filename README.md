@@ -29,7 +29,11 @@ com toda a integração necessária para rodar em uma maquina com docker instala
     - task
     - start processo beats with: ```bash celery -A app beats -l INFO```
     - start processo worker with: ```bash celery -A app worker -l INFO```
+
+![](app/static/beat.png) ![](app/static/worker.PNG)
+
 - agora criar o websocket install channels
+- configurando websocket da aplicacao
 
 
 ### Celery help
