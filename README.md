@@ -12,6 +12,30 @@ com toda a integração necessária para rodar em uma maquina com docker instala
     - [x] extensions: Remote - Containers
     - [x] [documentação](https://code.visualstudio.com/docs/remote/containers)
 
+## Get Started
+
+Baixe o repositorio em sua maquina tenha em mente que precisa dos pré requisitos  
+Rode o devcontainer 
+Abra 3 terminais do Visual Studio e execute esses comandos abaixo:  
+
+```bash
+#terminal 1
+cd /app
+./manager runserver
+
+#terminal 2
+cd /app
+celery -A app beat
+
+#terminal 3
+cd/app
+celery -A app worker
+
+#abra varias instancias de browser e veja o funcionanmento
+http://localhost:8000
+
+```
+
 ## Roteiro de desenvolvimento todos os passos já realizados
 
 - [x] instalando django 
