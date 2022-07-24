@@ -5,39 +5,55 @@ vamos utilizar uma API publica para buscar as mensagens e vamos utilizar celery 
 mandar as mensagens para todos os breowsers conectados, Essa implementação vai utilizar devcontainer
 com toda a integração necessária para rodar em uma maquina com docker instalado Windows, Linux ou Mac.
 
-- pré requisitos
-    - docker - Docker version 20.10.8, build 3967b7d
-    - docker-compose - Docker Compose version v2.2.2
-    - visual studio
-    - extensions: Remote - Containers
-    - [documentação](https://code.visualstudio.com/docs/remote/containers)
+- [x] pré requisitos
+    - [x] docker - Docker version 20.10.8, build 3967b7d
+    - [x] docker-compose - Docker Compose version v2.2.2
+    - [x] visual studio
+    - [x] extensions: Remote - Containers
+    - [x] [documentação](https://code.visualstudio.com/docs/remote/containers)
 
-## Configurando a aplicação todos os passos já realizados
+## Roteiro de desenvolvimento todos os passos já realizados
 
-- instalando django 
-- configurando dev container para instalação de dependencias e migrate  
-- configurando dependencias do projeto settings / templates
-- definindo no va chave de segurança settings
-- crianto pastas e arquivos de templates
-- rota padrao para acesso na url base
-- arquivo html usando bootstrap 5 'http://https://getbootstrap.com/'
-- configurando acesso a API jokes 'http://api.icndb.com/jokes/ramdom'
-- instalando e configurando redis
-    - dependencias do celery com redis ``` pip install 'celery[redis]' ```
-- instalando e configurando celery 
-    - broker
-    - task
-    - start processo beats with: ```bash celery -A app beats -l INFO```
-    - start processo worker with: ```bash celery -A app worker -l INFO```
+- [x] instalando django 
+- [x] configurando dev container para instalação de dependencias e migrate  
+- [x] configurando dependencias do projeto settings / templates
+- [x] definindo no va chave de segurança settings
+- [x] crianto pastas e arquivos de templates
+- [x] rota padrao para acesso na url base
+- [x] arquivo html usando bootstrap 5 'http://https://getbootstrap.com/'
+- [x] configurando acesso a API jokes 'http://api.icndb.com/jokes/ramdom'
+- [x] instalando e configurando redis
+    - [x] dependencias do celery com redis ``` pip install 'celery[redis]' ```
+- [x] instalando e configurando celery 
+    - [x] broker
+    - [x] task
+    - [x] start processo beats with: ```bash celery -A app beats -l INFO```
+    - [x] start processo worker with: ```bash celery -A app worker -l INFO```
 
 ![](app/static/beat.png) ![](app/static/worker.PNG)
 
-- agora criar o websocket install channels
-- configurando websocket da aplicacao
+- [x] instalando o channels
+- [x] instalando o chennels_redis
+- [x] configurando as filas dentro do django 
+- [x] criando websocket para broadcast
+- [x] atualizado dados na tela 
+- [x] configurando websocket da aplicacao
 
 
-### Celery help
+### Ajudas e informações relevantes sobre  ...
 
+**Busca de API do Chuck Norris**
+Esta api retorna varias piadas para ter o efeito de broadcast foi necessário pegar  
+pisda por piada dentro do resultado do endpoint 'http://api.icndb.com/jokes/ramdom'  
+```python
+    """ Tarefa de recuperar a piada"""
+    url = 'http://api.icndb.com/jokes/ramdom'
+    response = requests.get(url).json()
+    index = randint(1,574)
+    joke = response['value'][index]['joke']
+```
+
+**Help do Celery para start dos processos**
 ```bash
 Usage: celery [OPTIONS] COMMAND [ARGS]...
 
@@ -76,6 +92,9 @@ Commands:
   worker   Start worker instance.
 ```
 
-## Fonts na internet 
+## Referencias
  
+ - https://getbootstrap.com/
+ - https://docs.celeryq.dev/en/stable/
+ - https://docs.djangoproject.com/en/4.0/
  - https://www.youtube.com/watch?v=AZNp1CfOjtE

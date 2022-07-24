@@ -30,7 +30,8 @@
 			"extensions": [
 				"ms-python.python",
 				"ms-python.vscode-pylance",
-				"AnbuselvanRocky.bootstrap5-vscode"
+				"AnbuselvanRocky.bootstrap5-vscode",
+				"njpwerner.autodocstring"
 			]
 		}
 	},
