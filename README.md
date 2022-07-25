@@ -1,4 +1,5 @@
 # django-channel-broadcast
+![](app/static/page.png)  
 
 Vamos implementar um broadcast de Piadas do Chuck Norris com .devcontainer e filas no celery
 vamos utilizar uma API publica para buscar as mensagens e vamos utilizar celery mas o channel para 
