@@ -9,7 +9,7 @@ class JokerConsumer(AsyncWebsocketConsumer):
         await self.channel_layer.group_add('jokes', self.channel_name)
         await self.accept()
 
-    async def disconnect(self, code=None):
+    async def disconnect(self, code):
         await self.channel_layer.group_discard('jokes', self.channel_name)
 
     async def send_jokes(self, event):
